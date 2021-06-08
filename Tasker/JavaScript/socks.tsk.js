@@ -67,20 +67,26 @@ function priceWave(now, yesterday) {
 
 //想买
 function wBuy(name, now, obj) {
-    if (now > obj) {
+    if (obj * 1.05 > now) {
+        say(name + "可以关注啦", "com.google.android.tts", "zho-chn", "alarm", 5, 5)
         return "👀" + name
+    } else if (now > obj) {
+        return " "
     } else {
-        say(name+"可以买入啦","com.google.android.tts","zho-chn","alarm",5,5)
+        say(name + "可以买入啦", "com.google.android.tts", "zho-chn", "alarm", 5, 5)
         return "💎" + name
     }
 }
 
 //想卖
 function wSell(name, now, obj) {
-    if (now < obj) {
-        return "🙈" + name
+    if (obj * 0.95 < now) {
+        say(name + "可以关注啦", "com.google.android.tts", "zho-chn", "alarm", 5, 5)
+        return "👀" + name
+    } else if (now < obj) {
+        return " "
     } else {
-        say(name+"可以卖出啦","com.google.android.tts","zho-chn","alarm",5,5)
+        say(name + "可以卖出啦", "com.google.android.tts", "zho-chn", "alarm", 5, 5)
         return "💰" + name
     }
 }
