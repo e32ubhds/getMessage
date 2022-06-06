@@ -18,8 +18,6 @@ const screenCaptureAuthority = (function(landscape) {
         return _screenCaptureAuthority.instance
     }
 })()
-const sca = new screenCaptureAuthority()
-
 
 function ADBShellAuthority() {
     var isAdb = $shell.checkAccess("adb");
