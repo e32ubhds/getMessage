@@ -11,3 +11,12 @@ function SingleWrapper(cons) {
         return instance
     }
 }
+//test stub
+function User() {
+    this.name = 'aaa'
+}
+//client
+const SingleUser = SingleWrapper(User)
+const u1 = new SingleUser()
+const u2 = new SingleUser()
+console.log(u1 === u2);
